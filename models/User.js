@@ -18,6 +18,12 @@ const UserSchema = new Schema({
             ref: 'Thought',
             type: Schema.Types.ObjectId
         }
+    ],
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
     ]
 },
 {
