@@ -11,7 +11,7 @@ This is a social networking API called Network with me! This utilizes MongoDB an
 
         npm install
 
-    After dependencies have been downloaded, you can start the server by npm start
+After dependencies have been downloaded, you can start the server by npm start    
 
   # Usage
   In order to use this app, you will need Visual Studio Code, Javascript, Node.js, Mongoose, and Express.js. 
