@@ -1,4 +1,4 @@
-const { User, Thought } = require('../models')
+const { User } = require('../models')
 
 const userController = {
     //get all users
@@ -21,7 +21,7 @@ const userController = {
     addFriend({ params, body }, res) {
         User.findOneAndUpdate(
             { _id: params.userId },
-            { $push: { friends: body } },
+            { $addToSet: { friends: params.friendId } },
             { new: true, runValidators: true }
         )
         .then(dbUserData => {
@@ -38,7 +38,7 @@ const userController = {
     removeFriend({ params }, res) {
         User.findOneAndDelete(
             { _id: params.UserId },
-            { $pull: { friends: { friendsId: params.friendId } } },
+            { $pull: { friends: { friendId: params.friendId } } },
             { new: true }
         )
         .then(dbUserData => res.json(dbUserData))
